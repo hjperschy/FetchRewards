@@ -2,6 +2,8 @@ package com.example.fetchrewards
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TableLayout
+import android.widget.TableRow
 import android.widget.TextView
 
 import kotlinx.coroutines.*
@@ -24,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val textView: TextView = this.findViewById(R.id.dataView)
+        val tableView: TableLayout = this.findViewById(R.id.dataView)
 
         val job = retrieveFromURL(url)
 
@@ -33,9 +35,22 @@ class MainActivity : AppCompatActivity() {
 
             var dfModified = modifyDataFrame(df)
 
-            var test: String = dfModified.columnsCount().toString()
-
-            textView.text = test
+            for(r in dfModified) {
+                var row = TableRow(this@MainActivity)
+                var idCol = TextView(this@MainActivity)
+                var listIdCol = TextView(this@MainActivity)
+                var nameCol = TextView(this@MainActivity)
+                var id = r[0].toString()
+                var listId = r[1].toString()
+                var name = r[2].toString()
+                idCol.text = id
+                listIdCol.text = listId
+                nameCol.text = name
+                row.addView(idCol)
+                row.addView(listIdCol)
+                row.addView(nameCol)
+                tableView.addView(row)
+            }
         }
     }
 
@@ -44,11 +59,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun modifyDataFrame(df: AnyFrame) : AnyFrame {
-        df.drop { it["name"] == null || it["name"] == "" }
+        var dfModified = df.drop { it["name"] == null || it["name"] == "" }
 
-        df.sortBy { "listId" and "name" }
+        dfModified = dfModified.sortBy { "listId" and "id" }
 
-        return df
+        return dfModified
     }
 
     override fun onDestroy() {
