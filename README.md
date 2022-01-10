@@ -1,15 +1,15 @@
 # FetchRewards
 
 **Environment**<br>
-Android Studio 2020.3.1
-SDK: Android 12
-Tested with Pixel 3a XL (Android 12)
+Android Studio 2020.3.1<br>
+SDK: Android 12<br>
+Tested with Pixel 3a XL (Android 12)<br>
 
-**Dependencies**
-Gradle 7.0.4
-Kotlin 1.6.10
-Kotlin Dataframe 0.8.0-dev-877
-Kotlin Coroutines 1.6.0
+**Dependencies**<br>
+Gradle 7.0.4<br>
+Kotlin 1.6.10<br>
+Kotlin Dataframe 0.8.0-dev-877<br>
+Kotlin Coroutines 1.6.0<br>
 
 **Overview**<br>
 * Retrives JSON data from specified URL and stores in a Kotlin DataFrame
