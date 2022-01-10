@@ -12,6 +12,6 @@ Kotlin Dataframe 0.8.0-dev-877<br>
 Kotlin Coroutines 1.6.0<br>
 
 **Overview**<br>
-* Retrives JSON data from specified URL and stores in a Kotlin DataFrame
+* Retrieves JSON data from specified URL and stores in a Kotlin DataFrame
 * Removes entries with null or missing "name" with DataFrame operations
 * Displays data in a scrolable table layout
