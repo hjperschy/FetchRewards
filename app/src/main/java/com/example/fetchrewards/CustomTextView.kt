@@ -8,12 +8,12 @@ import android.util.AttributeSet
 class CustomTextView : AppCompatTextView {
     constructor(context: Context) : super(context) {
         this.textSize = 22f
-        this.setPadding(0,0,350,0)
+        this.setPadding(140,0,140,0)
     }
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         this.textSize = 22f
-        this.setPadding(0,0,350,0)
+        this.setPadding(140,0,140,0)
     }
 
     constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(
@@ -22,7 +22,7 @@ class CustomTextView : AppCompatTextView {
         defStyle
     ) {
         this.textSize = 22f
-        this.setPadding(0,0,350,0)
+        this.setPadding(140,0,140,0)
     }
 
     override fun onDraw(canvas: Canvas) {

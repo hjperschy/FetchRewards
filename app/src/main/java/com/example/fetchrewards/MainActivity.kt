@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity() {
                 idCol.text = id
                 listIdCol.text = listId
                 nameCol.text = name
-                row.addView(idCol)
                 row.addView(listIdCol)
+                row.addView(idCol)
                 row.addView(nameCol)
                 tableView.addView(row)
             }
@@ -62,6 +62,19 @@ class MainActivity : AppCompatActivity() {
         var dfModified = df.drop { it["name"] == null || it["name"] == "" }
 
         dfModified = dfModified.sortBy { "listId" and "id" }
+        /*
+         * Sorting by "name" resulted in:
+         * Item 0
+         * Item 1
+         * Item 100
+         * Item 110
+         * ........
+         * Item 2
+         * Item 200
+         * ........
+         * Unsure if was desired result so sorted by id
+         * to get ascending Item "number"
+         **/
 
         return dfModified
     }
