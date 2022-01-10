@@ -36,10 +36,10 @@ class MainActivity : AppCompatActivity() {
             var dfModified = modifyDataFrame(df)
 
             for(r in dfModified) {
-                var row = TableRow(this@MainActivity)
-                var idCol = TextView(this@MainActivity)
-                var listIdCol = TextView(this@MainActivity)
-                var nameCol = TextView(this@MainActivity)
+                var row = CustomTableRow(this@MainActivity)
+                var idCol = CustomTextView(this@MainActivity)
+                var listIdCol = CustomTextView(this@MainActivity)
+                var nameCol = CustomTextView(this@MainActivity)
                 var id = r[0].toString()
                 var listId = r[1].toString()
                 var name = r[2].toString()
